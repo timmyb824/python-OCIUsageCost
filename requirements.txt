@@ -1,0 +1,5 @@
+gotify
+oci
+pydantic==1.10.10
+requests
+rocketry
