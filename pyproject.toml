@@ -1,0 +1,53 @@
+[project]
+name = "oci-usage-cost"
+version = "0.1.0"
+description = "OCI Usage Cost"
+authors = [{ name = "Tim Bryant", email = "timothybryant3@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = ["oci", "requests"]
+
+[tool.uv]
+default-groups = []
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+filterwarnings = [
+  "error",
+  "ignore::RuntimeWarning",
+  "ignore::DeprecationWarning",
+]
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+  "build",
+  "chore",
+  "refactor",
+  "fix",
+  "perf",
+  "style",
+  "docs",
+  "ci",
+  "test",
+  "feat",
+  ":boom:",
+  "BREAKING_CHANGE",
+]
+major_tags = [":boom:", "BREAKING_CHANGE"]
+minor_tags = ["feat"]
+patch_tags = [
+  "fix",
+  "perf",
+  "style",
+  "docs",
+  "ci",
+  "test",
+  "refactor",
+  "chore",
+  "build",
+]
+
+
+[tool.setuptools.packages.find]
+exclude = ["ARCHIVE*", "tests*", "build*"]
